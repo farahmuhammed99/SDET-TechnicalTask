@@ -1,0 +1,10 @@
+{ 
+"emailAddress":"Trial.123@gmail.com",
+"InvalidEmailaddress": "Invalid", 
+"InvalidEmailaddress2":"Invalid123@@gmail.con", 
+"OrderNumber":"1174275", 
+"Message1": "I have received my order but it tends out it's not the same material as written in the description", 
+"Message2": "I got the wrong item", 
+"product": "Dress", 
+"dummyProduct":"xxxx"
+}
