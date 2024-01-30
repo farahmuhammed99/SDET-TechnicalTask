@@ -1,27 +1,46 @@
 # This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml' 
-version: 2.1 
+
 # Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
 # See: https://circleci.com/docs/2.0/orb-intro/ 
-orbs:
-node: circleci/node@4.7
-browser-tools: circleci/browser-tools@1.1.0 
-jobs:
-testUI:  
-docker:
-- image: cimg/node:lts-browsers
-steps: 
-- checkout 
-- browser-tools/install-browser-tools 
-- node/install-packages 
-- run:
- name: Run Tests
- working directory: SDET-TechnicalTask/SDET-UI tests
-command: npm run test
-- results:
-path: SDET-TechnicalTask/SDET-UI tests/tests_output/nightwatch-html-report/index.html
-destination: reports
-
-- store_test_results: 
-path: /tests_output 
-workflows: e2e-test: jobs: - test
+{
+    "version": 2.1,
+    "orbs": {
+        "node": "circleci/node@4.7",
+        "browser-tools": "circleci/browser-tools@1.4.6"
+    },
+    "jobs": {
+        "testUI": {
+            "working_directory": "/home/circleci/SDET-2024",
+            "docker": [
+                {
+                    "image": "cimg/node:20.4.0-browsers"
+                }
+            ],
+            "steps": [
+                "browser-tools/install-browser-tools",
+                "checkout",
+                {
+                    "run": {
+                        "name": "Install Dependencies",
+                        "working_directory": "/home/circleci/SDET-2024/SDET-TechnicalTask/SDET-UI tests",
+                        "command": "npm install"
+                    }
+                },
+                {
+                    "run": {
+                        "name": "Run Tests",
+                        "working_directory": "/home/circleci/SDET-2024/SDET-TechnicalTask/SDET-UI tests/tests",
+                        "command": "npm run test"
+                    }
+                },
+                {
+                    "store_artifacts": {
+                        "path": "/home/circleci/SDET-2024/UI/tests_output/nightwatch-html-report/index.html",
+                        "destination": "reports"
+                    }
+                }
+            ]
+        }
+    }
+}
 
