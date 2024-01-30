@@ -14,7 +14,12 @@ steps:
 - browser-tools/install-browser-tools 
 - node/install-packages 
 - run:
+ name: Run Tests
+ working directory: SDET-TechnicalTask/SDET-UI tests
 command: npm run test
+- results:
+path: SDET-TechnicalTask/SDET-UI tests/tests_output/nightwatch-html-report/index.html
+destination: reports
 
 - store_test_results: 
 path: /tests_output 
