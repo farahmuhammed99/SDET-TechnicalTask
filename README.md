@@ -26,11 +26,7 @@
 
 ## Bug Tickets
 
-- For any bugs found during testing, create a bug ticket using the bug ticket template in the `bugs` folder.
+- For any bugs found during testing, create a bug ticket using the bug ticket template in the Bug Report folder.
 
-## Bug Tickets Template
 
-| Bug ID | Description | Steps to Reproduce | Expected Result | Actual Result | Severity | Status |
-| ------ | ----------- | ------------------- | --------------- | ------------- | -------- | ------ |
-|        |             |                     |                 |               |          |        |
 
