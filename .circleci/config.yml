@@ -14,62 +14,12 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          working_directory: /home/circleci/SDET-2024/UI
-          command: npm install
-      - run:
-          name: Run Tests
-          working_directory: /home/circleci/version: 2.1
-
-orbs:
-  node: circleci/node@4.7
-  browser-tools: circleci/browser-tools@1.4.6
-
-jobs:
-  testUI:
-    working_directory: /home/circleci/SDET-2024
-    docker:
-      - image: cimg/node:20.4.0-browsers
-    steps:
-      - browser-tools/install-browser-tools
-      - checkout
-      - run:
-          name: Install Dependencies
-          working_directory: /home/circleci/SDET-2024/UI
-          command: npm install
-      - run:
-          name: Run Tests
-          working_directory: /home/circleci/version: 2.1
-
-orbs:
-  node: circleci/node@4.7
-  browser-tools: circleci/browser-tools@1.4.6
-
-jobs:
-  testUI:
-    working_directory: /home/circleci/SDET-2024
-    docker:
-      - image: cimg/node:20.4.0-browsers
-    steps:
-      - browser-tools/install-browser-tools
-      - checkout
-      - run:
-          name: Install Dependencies
           working_directory: /home/circleci/SDET-2024/SDET-TechnicalTask/SDET-UI tests
           command: npm install
       - run:
           name: Run Tests
-          working_directory: /home/circleci/SDET-TechnicalTask/SDET-UI tests
+          working_directory: /home/circleci/SDET-2024/SDET-TechnicalTask/SDET-UI tests/tests
           command: npm run test
       - store_artifacts:
           path: /home/circleci/SDET-2024/UI/tests_output/nightwatch-html-report/index.html
           destination: reports
-          command: npm run test
-      - store_artifacts:
-          path: /home/circleci/SDET-2024/UI/tests_output/nightwatch-html-report/index.html
-          destination: reports
-
-          command: npm run test
-      - store_artifacts:
-          path: /home/circleci/SDET-2024/UI/tests_output/nightwatch-html-report/index.html
-          destination: reports
-
