@@ -1,5 +1,5 @@
 const dataTest = require("../dataTest/dataTest.json");
-// const pic = require("path");
+
 
 describe("This is the contact us Page Testing", function () {
  it.skip("Check the visibility of the items",function(browser){ 
@@ -85,27 +85,8 @@ it('Enter Invalid Email',function(browser){
      browser.end();
     
 });
-/*it('Check for the mandatory fields',function(browser){ 
-    var contactUs = browser.page.contactsusPage.contactUsPage();
-    contactUs.navigate();
-    contactUs.click("@sendButton");
-    contactUs.expect.element("@errorMessage").is.visible;
-    
-    contactUs.element("@email").setValue(dataTest.InvalidEmailaddress);
-    contactUs.assert.valueEquals("@email",dataTest.InvalidEmailaddress);
-    contactUs.click("@sendButton");
-    contactUs.expect.element("@errorMessage").is.visible;
-    contactUs.click("@subjectHeadingDropdown");
-     contactUs.click('@webmasterOption');
-     contactUs.click("@sendButton");
-     contactUs.expect.element("@errorMessage").is.visible;
-     contactUs.element("@message").setValue(dataTest.Message2);
-     contactUs.assert.valueEquals("@message",dataTest.Message2);
-     contactUs.click("@sendButton")
-     .pause(2000);
-     
-     browser.end();
-});*/
+
+
 
 
    
@@ -119,7 +100,7 @@ it('Leave the Email field blank',function(browser){
      contactUs.assert.valueEquals("@message",dataTest.Message1);
      contactUs.click("@subjectHeadingDropdown");
      contactUs.click('@webmasterOption');
-     //contactUs.uploadDocument("@documentUpload", '/path/to/your/file.txt');
+
  
      // Click the Send button
      contactUs.click("@sendButton");
@@ -179,7 +160,7 @@ it('Leave the message field and the subject heading blank',function(browser){
 
      contactUs.click("@subjectHeadingDropdown");
      contactUs.click('@webmasterOption');
-     //contactUs.uploadDocument("@documentUpload", '/path/to/your/file.txt');
+  
  
      // Click the Send button
      contactUs.click("@sendButton")
