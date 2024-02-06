@@ -11,18 +11,14 @@
     "jobs": {
         "testUI": {
             "working_directory": "/home/circleci/SDET-2024",
-            "docker": [
-                {
-                    "image": "cimg/node:20.4.0-browsers"
-                }
-            ],
+        
             "steps": [
                 "browser-tools/install-browser-tools",
                 "checkout",
                 {
                     "run": {
                         "name": "Install Dependencies",
-                        "working_directory": "/home/circleci/SDET-2024/SDET-TechnicalTask/SDET-UI tests",
+                        "working_directory": "/home/SDET-2024/SDET-TechnicalTask/SDET-UI tests",
                         "command": "npm install"
                     }
                 },
@@ -42,5 +38,7 @@
             ]
         }
     }
+
 }
+
 
