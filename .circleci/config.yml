@@ -22,12 +22,12 @@ jobs:
           command: npm install
       - run:
           name: Run Tests
-          working_directory: /home/circleci/SDET-2024/UI
+          working_directory: SDET-TechnicalTask/SDET-UI tests
           command: npm run test
       - store_artifacts:
-          path: /home/circleci/SDET-2024/UI/tests_output/nightwatch-html-report/index.html
+          path: SDET-TechnicalTask/SDET-UI tests/tests_output/nightwatch-html-report/index.html
           destination: reports
           workflows:
-  test:
+      -  test:
     jobs:
       - testUI
